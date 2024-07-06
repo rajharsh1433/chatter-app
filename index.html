@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatter-app</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Including the socketio file -->
+     <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <h1 class="chatterup-heading">Chatter-app</h1>
+    <!--Displaying the form here on appn entry-->
+    <div id="prompt">
+        <form id="my-prompt">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <button type="submit">Enter</button>
+        </form>
+    </div>
+    <!--Displaying the message content-->
+    <div id="container" class="container">
+        <div class="left-container">
+            <!--welcome messge-->
+            <p id="welcome" style="text-align:left;"></p>
+            <div id="message-list">
+                <strong>older message</strong>
+                <!--Tasks will be displayed here-->
+            </div>
+            <!--Added new messages in the left container-->
+            <div id="message-form-div">
+                <form id="message-form">
+                    <div id="new-message" style="width:100%">
+                        <input type="text" id="text-message" placeholder="Enter new messges" required>
+                        <button id="send-message-button">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--Online users display in the right container-->
+        <div class="right-container">
+           <h2 id="count">Online</h2>
+           <div id="online-user"><!--users display here --></div>
+        </div>
+    </div>
+    <footer>
+        <script src="script.js"></script>
+    </footer>
+</body>
+</html>
